@@ -1,0 +1,255 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgba(247, 244, 241, 0.595);
+  font-family: cursive;
+}
+
+#nav {
+  display: flex;
+  top: 6px;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  z-index: 12;
+  height: 34vh;
+  width: 100%;
+}
+
+#nav::before {
+  content: "";
+  background: url(backgrond.webp) top 84% center/70% no-repeat;
+
+  position: absolute;
+  width: 100%;
+  opacity: 0.7;
+  height: 34vh;
+
+  z-index: -4;
+}
+.container {
+  display: grid;
+  position: relative;
+  grid-template-columns: 60%;
+  grid-gap: 12px;
+  justify-content: center;
+  border-radius: 13px;
+  align-items: center;
+  overflow: hidden;
+}
+#instr span {
+  font-size: x-small;
+  color: rgb(110, 0, 0);
+}
+.box {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* grid-gap: 12px; */
+  padding: 45px;
+  margin: 25px;
+  border-radius: 15px 0 15px 0;
+  box-shadow: 12px 12px 25px rgb(68, 80, 106);
+  background: linear-gradient(rgba(81, 93, 117, 0.678), rgba(3, 11, 43, 0.206));
+  transition: 0.4s ease-out;
+}
+#instr {
+  display: flex;
+  padding: 15px;
+  flex-direction: column;
+  /* background: linear-gradient(rgba(71, 2, 70, 0.304), rgba(55, 57, 120, 0.306)); */
+  background: rgba(203, 198, 198, 0.96);
+  transition: 0.4s ease-out;
+  border-radius: 0 15px 0 15px;
+}
+#instr:hover {
+  transform: none;
+}
+.box:hover {
+  transform: scale(113%);
+  background-color: rgba(7, 85, 85, 0.249);
+}
+h1 {
+  padding: 7px;
+  font-size: 3.1rem;
+  font: 800;
+  letter-spacing: 33px;
+  text-transform: uppercase;
+  font-family: " Haettenschweiler";
+  text-shadow: 8px 0px 4px rgb(53, 175, 116);
+}
+
+p {
+  padding: 7px;
+  font-size: 1.1rem;
+  opacity: 0.8;
+  font-weight: 400;
+  font-family: "fantasy";
+  color: rgb(30, 1, 77);
+}
+lable {
+  color: rgb(217, 225, 225);
+}
+input[placeholder] {
+  color: rgb(248, 248, 248);
+}
+select {
+  height: 40px;
+  width: 87px;
+  padding: 12px;
+  font-family: Cambria;
+  background-color: rgba(0, 0, 0, 0.264);
+  color: rgba(0, 0, 0, 0.615);
+}
+input[type="radio"] {
+  height: 24px;
+  color: rgba(0, 0, 0, 0.615);
+}
+.box .radio {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: rgba(0, 0, 0, 0.503);
+  font-family: Cambria;
+}
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+  height: 50px;
+  padding: 0 2rem;
+
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255, 254, 254, 0.456);
+}
+input[type="text"]:hover,
+input[type="password"]:hover {
+  border-bottom: 1.3px solid rgba(11, 3, 44, 0.574);
+}
+.box .x {
+  padding-left: 5px;
+  color: rgb(242, 58, 95);
+}
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+}
+button:hover {
+  transform: scale(85%);
+  background-color: rgba(0, 0, 0, 0.575);
+  transition: 0.5s ease-in-out;
+}
+button {
+  border: none;
+  background: linear-gradient(
+    45deg,
+    rgba(68, 6, 77, 0.639),
+    rgba(4, 8, 88, 0.361)
+  );
+
+  color: white;
+  padding: 1rem;
+  border-radius: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 13px;
+  height: 46px;
+  cursor: pointer;
+  width: 30%;
+  margin: 13px;
+}
+
+/* FOR RESPONSIVE PAGE LAYOUT */
+
+@media (max-width: 750px) {
+  #nav {
+    margin: 0;
+    z-index: 12;
+    height: 27vh;
+  }
+
+  #nav::before {
+    height: 27vh;
+    background: url(backgrond.webp) top 84% center/85% no-repeat;
+
+    z-index: -4;
+  }
+  h1 {
+    flex-wrap: wrap;
+    font-size: 2.5rem;
+    font: 800;
+    letter-spacing: 23px;
+    text-transform: uppercase;
+
+    text-shadow: 12px 12px 16px rgb(184, 6, 6);
+  }
+  h2 {
+    font-size: 0.9rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  .container {
+    grid-template-columns: 86%;
+    grid-gap: 12px;
+    justify-content: center;
+    border-radius: 13px;
+    align-items: center;
+    overflow: hidden;
+  }
+  .box {
+    display: grid;
+
+    padding: 15px;
+    margin: 19px;
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="number"] {
+    height: 45px;
+    font-size: 12px;
+  }
+  select {
+    height: 30px;
+    width: 70px;
+    font-size: 1rem;
+  }
+  lable {
+    font-size: 0.8rem;
+  }
+  button {
+    font-size: 0.7rem;
+    height: 39px;
+  }
+}
+
+@media (max-width: 499px) {
+  h1 {
+    font-size: 1.8rem;
+    letter-spacing: 16px;
+  }
+  h2 {
+    font-size: 0.7rem;
+    margin: 0;
+  }
+  p {
+    font-size: 13px;
+    margin: 0;
+  }
+  select {
+    height: 30px;
+    width: 70px;
+    font-size: 0.8rem;
+  }
+  lable {
+    font-size: 0.7rem;
+  }
+  button {
+    font-size: 0.5rem;
+    height: 30px;
+  }
+}
