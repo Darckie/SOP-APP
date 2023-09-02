@@ -23,6 +23,8 @@ formsubmit.addEventListener("submit", function (e) {
   // const ans = document.querySelector(".ans:checked").value;
   const gic_pay = document.getElementById("gic-pay").value;
 
+  const sound = new Audio("msg.mp3");
+
   //fetch the post req_________________
 
   fetch("/submit", {
@@ -34,7 +36,13 @@ formsubmit.addEventListener("submit", function (e) {
   })
     .then((response) => {
       if (response.ok) {
-        return response.json();
+        // return response.json();
+
+        sound.play();
+        alert(
+          `Mr ${name} ,you have successfully submitted your form. We will contact you soon at ${email}`
+        );
+        formsubmit.reset();
       } else {
         throw new Error("Failed to submit the form");
       }

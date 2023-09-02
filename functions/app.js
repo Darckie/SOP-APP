@@ -3,8 +3,11 @@ const app = express();
 const bodyParser = require("body-parser");
 const path = require("path");
 const nodemailer = require("nodemailer");
+require("dotenv").config();
+const port = process.env.PORT || 80;
 
-const port = 80;
+const emailUser = process.env.EMAIL_USER;
+const emailPass = process.env.EMAIL_PASS;
 
 //Middleware
 app.use(bodyParser.json());
@@ -31,8 +34,8 @@ app.post("/submit", (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "Gmail", // email service
     auth: {
-      user: "brijeshkunwar85@gmail.com", // Your email address
-      pass: "hndasajmznwzqlqu", // Your email/app password
+      user: emailUser, // Your email address
+      pass: emailPass, // Your email/app password
     },
     tls: {
       rejectUnauthorized: false, // Trust the self-signed certificate
@@ -59,5 +62,5 @@ app.post("/submit", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("connection Stablished");
+  console.log(`connection Stablished at ${port}`);
 });
